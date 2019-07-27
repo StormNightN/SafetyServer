@@ -5,6 +5,10 @@ set(CMAKE_CXX_STANDARD 14)
 find_package(spdlog REQUIRED)
 find_package(Threads)
 
+find_package(Protobuf REQUIRED)
+include_directories(${Protobuf_INCLUDE_DIRS})
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
+
 set(SOURCES main.cpp Server.cpp)
 
 if (CMAKE_BUILD_TYPE EQUAL "DEBUG")
